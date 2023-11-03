@@ -1,0 +1,23 @@
+```{r}
+library(tidyverse)
+View(starwars)
+```
+
+
+```{r}
+is.na(starwars)
+colSums(is.na(starwars))
+```
+
+
+```{r}
+filter_na <- starwars %>%
+  select(name, gender, hair_color, height) %>%
+  drop_na(height) %>%
+  View()
+```
+
+```{r}
+starwars$height[is.na(starwars$height)] <- mean(starwars$height)
+```
+
